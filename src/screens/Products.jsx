@@ -1,9 +1,4 @@
-import {
-    Container,
-    createStyles, rem,
-    Text,
-    Title
-} from "@mantine/core";
+import { Container, createStyles, rem, Text, Title } from "@mantine/core";
 
 import About from "../assets/Products.jpg";
 
@@ -57,20 +52,18 @@ export function Products() {
         <HeaderMenu />
         <Container size="lg" sx={{ height: "25.3vh" }}>
           <div className={classes.inner}>
-            <LazyShow>
-              <div className={classes.content}>
-                <Title className={classes.title} pt={70}>
-                  <Text
-                    component="span"
-                    inherit
-                    variant="gradient"
-                    gradient={{ from: "indigo", to: "cyan" }}
-                  >
-                    Products
-                  </Text>
-                </Title>
-              </div>
-            </LazyShow>
+            <div className={classes.content}>
+              <Title className={classes.title} pt={70}>
+                <Text
+                  component="span"
+                  inherit
+                  variant="gradient"
+                  gradient={{ from: "indigo", to: "cyan" }}
+                >
+                  Products
+                </Text>
+              </Title>
+            </div>
           </div>
         </Container>
       </div>

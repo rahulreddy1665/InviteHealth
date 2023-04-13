@@ -7,7 +7,6 @@ import { ArticlesCardsGrid } from "../components/ArticleCard";
   
   import { Footers } from "../components/Footer";
 import { HeaderMenu } from "../components/Header";
-import LazyShow from "../components/LazyShow";
   
   const useStyles = createStyles((theme) => ({
     root: {
@@ -57,7 +56,7 @@ import LazyShow from "../components/LazyShow";
           <HeaderMenu />
           <Container size="lg" sx={{ height: "25.3vh" }}>
             <div className={classes.inner}>
-              <LazyShow>
+         
                 <div className={classes.content}>
                   <Title className={classes.title} pt={70}>
                     <Text
@@ -70,7 +69,7 @@ import LazyShow from "../components/LazyShow";
                     </Text>
                   </Title>
                 </div>
-              </LazyShow>
+             
             </div>
           </Container>
         </div>
@@ -78,10 +77,9 @@ import LazyShow from "../components/LazyShow";
         <Container size="lg" className={classes.wrapper}>
           <ArticlesCardsGrid/>
         </Container>
-        {/* Footer Section */}
-        <LazyShow>
+      
           <Footers height={rem(40)} />
-        </LazyShow>
+       
       </>
     );
   }

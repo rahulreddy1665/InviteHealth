@@ -28,14 +28,14 @@ function useOnScreen(ref, rootMargin = "0px") {
     return isIntersecting;
 }
 
-const LazyShow = ({ children }) => {
+const LazyShowHeader = ({ children }) => {
     const controls = useAnimation();
     const rootRef = useRef();
     const onScreen = useOnScreen(rootRef);
     useEffect(() => {
         if (onScreen) {
             controls.start({
-                y: 0,
+                x: 0,
                 opacity: 1,
                 transition: {
                     duration: 1.2,
@@ -48,7 +48,7 @@ const LazyShow = ({ children }) => {
         <motion.div
             className="lazy-div"
             ref={rootRef}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={controls}
         >
             {children}
@@ -56,4 +56,4 @@ const LazyShow = ({ children }) => {
     );
 };
 
-export default LazyShow;    
+export default LazyShowHeader;    

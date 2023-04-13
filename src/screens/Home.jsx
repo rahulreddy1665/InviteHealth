@@ -1,9 +1,11 @@
 import { createStyles, Container, Title, Text, Button, rem } from '@mantine/core';
+import { useNavigate } from 'react-router-dom';
 import homeBg from "../assets/homeBG.jpg"
 import { Features } from '../components/Features';
 import { Footers } from '../components/Footer';
 import { HeaderMenu } from '../components/Header';
 import LazyShow from '../components/LazyShow';
+import LazyShowHeader from '../components/LazyShowHeader';
 import { TopProducts } from '../components/TopProducts';
 
 const useStyles = createStyles((theme) => ({
@@ -95,13 +97,14 @@ const useStyles = createStyles((theme) => ({
 
 export function Home() {
   const { classes } = useStyles();
+  const navigate = useNavigate()
   return (
     <>
       <div className={classes.root}>
       <HeaderMenu />
       <Container size="lg" sx={{ height: "75.3vh" }} >
         <div className={classes.inner}>
-            <LazyShow>
+            <LazyShowHeader>
             <div className={classes.content}>
             <Title className={classes.title}>
               A{' '}
@@ -132,11 +135,12 @@ export function Home() {
               size="xl"
               className={classes.control}
               mt={40}
+              onClick={()=>navigate("/products")}
             >
               Get started
             </Button>
           </div>
-            </LazyShow>
+            </LazyShowHeader>
         </div>
       </Container>
      

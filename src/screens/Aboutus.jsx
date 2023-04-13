@@ -8,6 +8,7 @@ import About from "../assets/Aboutus.jpg";
 import { Footers } from "../components/Footer";
 import { HeaderMenu } from "../components/Header";
 import LazyShow from "../components/LazyShow";
+import LazyShowHeader from "../components/LazyShowHeader";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -57,7 +58,7 @@ function Aboutus() {
         <HeaderMenu />
         <Container size="lg" sx={{ height: "25.3vh" }}>
           <div className={classes.inner}>
-            <LazyShow>
+           
               <div className={classes.content}>
                 <Title className={classes.title} pt={70}>
                   <Text
@@ -70,7 +71,7 @@ function Aboutus() {
                   </Text>
                 </Title>
               </div>
-            </LazyShow>
+          
           </div>
         </Container>
       </div>
@@ -78,14 +79,14 @@ function Aboutus() {
       <Container size="lg" className={classes.wrapper}>
         <Grid>
           <Grid.Col xs={6}>
-            <LazyShow>
+            <LazyShowHeader>
               <Image
                 style={{ margin: "auto" }}
                 src={Abooutt}
                 alt="Image"
                 width="100%"
               />
-            </LazyShow>
+            </LazyShowHeader>
           </Grid.Col>
           <Grid.Col xs={6} style={{margin:'auto'}}>
             <LazyShow>
@@ -114,10 +115,9 @@ function Aboutus() {
           </Grid.Col>
         </Grid>
       </Container>
-      {/* Footer Section */}
-      <LazyShow>
+    
         <Footers height={rem(40)} />
-      </LazyShow>
+   
     </>
   );
 }
