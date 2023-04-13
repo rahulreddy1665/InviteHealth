@@ -105,7 +105,7 @@ export function HeaderMenu() {
         key={link.label}
         href={link.link}
         className={cx(classes.link, {
-          [classes.linkActive]: location.pathname === link.link,
+          [classes.linkActive]: location.pathname === active,
         })}
         onClick={(event) => {
           event.preventDefault();
@@ -119,9 +119,9 @@ export function HeaderMenu() {
     );
   });
 
-  const home = () =>{
-    navigate("/")
-  }
+  // const home = () =>{
+  //   navigate("/")
+  // }
 
   return (
     <div className={scroll.y > 99 ? "sticky_nav_bar_header" : "nav_bar_header"}>
