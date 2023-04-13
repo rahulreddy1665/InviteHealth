@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+body {
+  margin: 0;
+  font-family: 'Inter',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav_bar_header {
+  width: 100%;
+  padding-top: 8px;
+
+  margin-bottom: 30px;
+  position: fixed;
+  transition: all 0.8s ease;
+}
+
+.sticky_nav_bar_header {
+  width: 100%;
+  padding: 8px 0px;
+  position: fixed;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border 2s ease;
+  margin-bottom: 60px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.8s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.464);
+}
+
+.nav_bar_color {
+  color: white;
+}
+
+.nav_bar_color2 {
+  color: black;
+}
+
+.nav_bar_color_Active {
+  background-image: linear-gradient(45deg, #4c6ef5 0%, #15aabf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav_bar_link {
+  display: block;
+  line-height: 1;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-bottom-color: linear-gradient(45deg, #4c6ef5 0%, #15aabf 100%);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border 2s ease;
+}
+
+.nav_bar_link:after {
+  display: block;
+  content: '';
+  border-bottom: solid 1px lightskyblue;
+  transform: scaleX(0);
+  padding-top: 5px;
+  transition: transform 250ms ease-in-out;
+}
+
+.nav_bar_link:hover:after {
+  transform: scaleX(1);
+}
+
+@media screen and (max-width:768px) and (min-width:10px) {
+  .links {
+    display: none;
+  }
+
+  .mobile_links {
+    display: visible;
+  }
+
+}
+
+@media screen and (max-width:4000px) and (min-width:768px) {
+  .links {
+    display: visible;
+
+  }
+
+  .mobile_links {
+    display: none;
+  }
+}
