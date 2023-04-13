@@ -98,7 +98,7 @@ export function HeaderMenu() {
   const theme = useMantineTheme();
   let navigate = useNavigate();
   
-  const [ setActive] = useState(links[0].link);
+  const [active, setActive] = useState(links[0].link);
   const items = links.map((link) => {
     return (
       <a
@@ -119,9 +119,9 @@ export function HeaderMenu() {
     );
   });
 
-  // const home = () =>{
-  //   navigate("/")
-  // }
+  const home = () =>{
+    navigate("/")
+  }
 
   return (
     <div className={scroll.y > 99 ? "sticky_nav_bar_header" : "nav_bar_header"}>
