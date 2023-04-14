@@ -5,6 +5,7 @@ import About from "../assets/Products.jpg";
 import { Footers } from "../components/Footer";
 import { HeaderMenu } from "../components/Header";
 import LazyShow from "../components/LazyShow";
+import { ProductsCard } from "../components/ProductCard";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -69,11 +70,11 @@ export function Products() {
       </div>
       {/* For MOckdata  */}
       <Container size="lg" className={classes.wrapper}>
-        <Text size="xl">Coming Sooon</Text>
+        <ProductsCard />
       </Container>
       {/* Footer Section */}
       <LazyShow>
-        <Footers height={rem(360)} />
+        <Footers height={rem(140)} />
       </LazyShow>
     </>
   );

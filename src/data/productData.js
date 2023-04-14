@@ -5,23 +5,58 @@ export const productData = [
         
       },
       {
-        title: 'Protein Powder Machineries',
-        image: require("../assets/proteinpowder.jpg"),
+        title: 'Digestive Enzyme Drops',
+        image: require("../assets//Products/PEPTINORMDROPS.jpg"),
        
       },
       {
-        title: 'Blunder for fine powder',
-        image: require("../assets/finepowdee.jpg"),
+        title: 'Vitamin D3 drops in Mango flavour',
+        image: require("../assets/Products/Datacal.jpg"),
         
       },
       {
-        title: 'Machine for ORS drink',
-        image:require("../assets/tetrapack.jpg"),
+        title: 'ORS drink for Diabetic & Hypertensive People',
+        image:require("../assets/Products/restl.jpg"),
         
       },
       {
-        title: 'Liquid Oral Machine for optimum temperature as recommended by WHO',
-        image:require("../assets/sugarsyrup.jpg"),
+        title: 'ORS drink in tetra pack in 2 flavours(Apple & Orange)',
+        image:require("../assets/Products/ORSORANGE.jpg"),
         
       },
+      {
+        title: 'Digestive Enzyme Syrup',
+        image: require("../assets/Products/Peptinorm.jpg"),
+        
+      },
+      {
+        title: 'Multivitamin Syrup',
+        image:require("../assets/Products/VitobaSyrup.jpg"),
+        
+      },
+      {
+        title: 'Ferrous Ascobate with goodness of vit c & folic acid',
+        image:require("../assets/Products/Abaifersyrupp.jpeg"),
+        
+      },
+      {
+        title: 'Ferrous Ascobate with goodness of vit c & folic acid Drops',
+        image: require("../assets/Products/Abaiferdrops.jpg"),
+        
+      },
+      {
+        title: 'Protein Powder in choclate flavour',
+        image:require("../assets/Products/Promarin.jpg"),
+        
+      },
+      {
+        title: 'Diabetic Protein Drink',
+        image:require("../assets/Products/Promarin1.jpg"),
+        
+      },
+      {
+        title: 'Protein Powder For Pregnancy & Lactation',
+        image:require("../assets/Products/Promarinpl.jpg"),
+      },
+      
 ]
