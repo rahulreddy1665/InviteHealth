@@ -40,7 +40,7 @@ export function Footers({height}) {
       <Container className={classes.inner}>
         {/* <MantineLogo size={28} /> */}
         <Text style={{ textAlign: "center" }}>
-            &copy; {new Date().getFullYear()} Dummy.
+            &copy; {new Date().getFullYear()} Invitehealth Specialities.
           </Text>
         <Group spacing={0} className={classes.links} position="right" noWrap>
           <ActionIcon size="lg">
