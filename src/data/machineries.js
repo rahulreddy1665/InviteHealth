@@ -20,8 +20,29 @@ export const machineriesData = [
         
       },
       {
-        title: 'Liquid Oral Machine for optimum temperature as recommended by WHO',
+        title: 'Liquid Oral Machine',
         image:require("../assets/sugarsyrup.jpg"),
+        
+      },
+
+       {
+        title: 'Sterilizer',
+        image: require("../assets/Sterlizer.jpg"),
+       
+      },
+      {
+        title: 'Boiler',
+        image: require("../assets/Boiler.jpg"),
+        
+      },
+      {
+        title: 'Heater',
+        image:require("../assets/Heater.jpg"),
+        
+      },
+      {
+        title: 'Sterilizer',
+        image:require("../assets/Sterlizier1.jpg"),
         
       },
 ]

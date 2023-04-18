@@ -53,6 +53,11 @@ const useStyles = createStyles((theme) => {
         lineHeight: 1.15,
       },
     },
+    maps:{
+      [theme.fn.smallerThan("sm")]: {
+        marginTop:60
+      },
+    },
     contacts: {
       boxSizing: "border-box",
       position: "relative",
@@ -148,9 +153,9 @@ function Contactus() {
               </Paper>
             </LazyShowHeader>
           </Grid.Col>
-          <Grid.Col md={7} sm={6}>
+          <Grid.Col md={7} sm={6} className={classes.maps}>
             <LazyShow>
-              <div style={{ overflow: "hidden", marginTop: -40 }}>
+              <div style={{ overflow: "hidden", marginTop: -40 }} >
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15549.233756735475!2d77.49762872781135!3d13.016019853226856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3cfa83f451ad%3A0x703eff97cd9dc503!2sPeenya%20Industrial%20Area%20Phase%20IV%2C%20Peenya%2C%20Bengaluru%2C%20Karnataka%20560058!5e0!3m2!1sen!2sin!4v1643554324970!5m2!1sen!2sin"
                   width="600"

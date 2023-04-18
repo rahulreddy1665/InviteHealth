@@ -1,13 +1,18 @@
 import {
-  Box, Card,
+  Box,
+  Button,
+  Card,
   Container,
   createStyles,
   getStylesRef,
   Image,
   rem,
   SimpleGrid,
-  Text
+  Text,
+  Modal
 } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { useState } from "react";
 import { productData } from "../data/productData";
 import LazyShow from "./LazyShow";
 
@@ -18,23 +23,44 @@ const useStyles = createStyles((theme) => ({
     boxShadow: theme.shadows.md,
     display: "flex",
     flexDirection: "column",
-    [`&:hover .${getStylesRef('image')}`]: {
-      transform: 'scale(1.03)',
+    [`&:hover .${getStylesRef("image")}`]: {
+      transform: "scale(1.03)",
     },
     transition: "transform 150ms ease, box-shadow 150ms ease",
   },
 
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    textAlign: "center",
+
+    fontSize: 15,
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      fontSize: 13,
+      lineHeight: 1.15,
+    },
+  },
+  Listtitle: {
+    fontFamily: `${theme.fontFamily}`,
+    textAlign: "center",
+    fontSize: 15.5,
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      fontSize: 12,
+      lineHeight: 1.15,
+    },
+  },
+  listDescription: {
+    fontFamily: `${theme.fontFamily}`,
+    textAlign: "left",
+    fontSize: 14.5,
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
+      fontSize: 12,
+      lineHeight: 1,
+    },
   },
 
-  footer: {
-    padding: `${theme.spacing.xs} ${theme.spacing.lg}`,
-    marginTop: theme.spacing.md,
-
-    margin: "auto",
-    flexShrink: 0,
-  },
   borderTOp: {
     marginTop: 10,
     borderTop: `${rem(1)} solid ${
@@ -53,6 +79,16 @@ const useStyles = createStyles((theme) => ({
 
 export function ProductsCard() {
   const { classes } = useStyles();
+  const [description, setDescription] = useState([]);
+  const [product,setProduct] = useState("")
+
+  const [opened, { open, close }] = useDisclosure(false);
+
+  const handleProduct = (item) => {
+    setDescription(item.description);
+    setProduct(item.productTitle)
+    open(true);
+  };
 
   const cards = productData.map((item) => (
     <Card
@@ -77,14 +113,20 @@ export function ProductsCard() {
         </Text>
       </Box>
 
-      {/* <div className={classes.borderTOp}></div>
-      {item.title !== "Protein Powder in choclate flavour" ||
-       item.title !== "Diabetic Protein Drink" ||
-       item.title !== "Protein Powder For Pregnancy & Lactation" && (
-          <Card.Section className={classes.footer}>
-            <Button variant="outline">Know more</Button>
-          </Card.Section>
-        )} */}
+      {item.title !== "Protein Powder in choclate flavour" &&
+        item.title !== "Diabetic Protein Drink" &&
+        item.title !== "Protein Powder For Pregnancy & Lactation" && (
+          // <Card.Section className={classes.footer}>
+          <Button
+            fullWidth
+            variant="outline"
+            mt={10}
+            onClick={() => handleProduct(item)}
+          >
+            Know more
+          </Button>
+          // </Card.Section>
+        )}
     </Card>
   ));
 
@@ -95,6 +137,21 @@ export function ProductsCard() {
           {cards}
         </SimpleGrid>
       </LazyShow>
+      <Modal opened={opened} onClose={close} title={product}>
+        {/* Modal content */}
+        {description.map((item) => (
+          <div key={item.id}>
+            {item.listDescription && (
+              <ul>
+                <li className={classes.listDescription}>{item.listDescription}</li>
+              </ul>
+            )}
+            {item.listTitle && 
+             <h3 className={classes.Listtitle}>{item.listTitle.toString().toUpperCase()}</h3>
+            }
+          </div>
+        ))}
+      </Modal>
     </Container>
   );
 }

@@ -39,7 +39,7 @@ export function ArticlesCardsGrid() {
         href="#"
         className={classes.card}
       >
-        <AspectRatio ratio={11.5 / 9}>
+        <AspectRatio ratio={16 / 9}>
           <Image src={article.image} />
         </AspectRatio>
         <Text className={classes.title} mt={5}>
